@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<header>
+    <title>Brython repro</title>
+    <script src="https://raw.githack.com/brython-dev/brython/master/www/src/brython.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://raw.githack.com/brython-dev/brython/master/www/src/brython_stdlib.js"
+            crossorigin="anonymous">
+    </script>
+</header>
+<body>
+    <h1>Hello from Demo /demo</h1>
+    <div>
+        <button
+            onclick="execBrython()"
+        >
+            Execute Python Snippet
+        </button>
+    </div>
+    <div>
+        <a href="/">Go to /</a>
+    </div>
+    <script>
+        function execBrython() {
+            if (window.__BRYTHON__.runPythonSource) {
+              code = `from python_runner import from_lib
+print("Hello from", from_lib())`;
+              window.__BRYTHON__.runPythonSource(code, {
+                pythonpath: ["/bry-libs/"],
+              });
+            } else {
+              console.log(window.__BRYTHON__);
+              alert("Brython not loaded");
+            }
+        }
+    </script>
+</body>
