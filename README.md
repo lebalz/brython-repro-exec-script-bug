@@ -24,6 +24,7 @@ window.__BRYTHON__.runPythonSource(
 
 The lib import crashes when the code is executed from the root domain (http://localhost:3000), but works when executed from a subdomain (http://localhost:3000/demo).
 
-<video>
-    <source src="./bug-repro.mp4" type="video/mp4">
-</video>
+
+
+https://github.com/lebalz/brython-repro-exec-script-bug/assets/22354689/aaf9b3d0-53cb-4388-969b-1543bb52e177
+
